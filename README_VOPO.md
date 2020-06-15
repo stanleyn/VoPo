@@ -1,11 +1,16 @@
 
 # Overview
 
+## Updates and Contact Information
+
 * Date Updated: June 15, 2020
 * Prepared By: Natalie Stanley (stanleyn@stanford.edu)
 * Code Tested in: R version 3.4.4 (2018-03-15)
 
-Purpose: We introduce VoPo which enables end-to-end bioinformatics analysis of single-cell mass cytometry data. Here we provide code to reproduce the following results. 
+## Purpose
+
+We introduce VoPo which enables end-to-end bioinformatics analysis of single-cell mass cytometry data. Here we provide code to reproduce the following results. 
+
 1) Running VoPo clustering on a few FCS files
 
 2) Generating distributions of classification accuracies from single vs. repeated metaclustering solutions (Figure 2D.). Uses processed data from running 50 iterations of the repeated clustering algorithm.
@@ -16,30 +21,19 @@ Alternatively, in (4) we have provided an example for re-running all clustering 
 
 4) Re-running the repeated metaclustering strategy from scratch along with classification and visualization. Note that this task requires downloading FCS files from each dataset. 
 
+## Dependencies
 
-Dependencies: We use a number of R packages. Please make sure that you have these packages installed. `flowCore`,
--foreach
--doParallel
--iterators
--plyr
--randomForest
--matrixStats
--ROCR
--FastKNN
--miscTools
--ggplot2
--reshape2
--viridis
--pROC
--igraph
+Dependencies: We use a number of R packages. Please make sure that you have these packages installed. `flowCore`, `foreach`, `doParallel`, `iterators`, `plyr`, `randomForest`, `matrixStats`,`ROCR`,`FastKNN`, `miscTools`, `ggplot2`, `reshape2`, `viridis`, `pROC`, `igraph`.
 
-#####################################################################################################################################################
-#####################################################################################################################################################
+# Installation Instructions
 
-Installation Instructions and Getting Started:
+* We assume that you have R installed. :) We used 3.4.4 to produce the results in this paper. R and the above packages are the only things that you need to install and we expect this to take minuts on a standard desktop computer.
 
--Please make sure you have R installed. We used 3.4.4 to produce the results in this paper. R is the only thing that you need to install and we expect this to take minuts on a standard desktop computer.
--You downloaded this directory into some place *YourPath*. Please change your working directory in R so that you are in the Reproduce folder
+* You can clone this git repository by 
+
+git clone https://github.com/stanleyn/VoPo
+
+* You downloaded this directory into some place *YourPath*. Please change your working directory in R so that you are in this folder
 
 >setwd('YourPath/Reproduce')
 
