@@ -1,9 +1,9 @@
 
 # Overview
 
-Date Updated: June 15, 2020
-Prepared By: Natalie Stanley (stanleyn@stanford.edu)
-Code Tested in: R version 3.4.4 (2018-03-15)
+* Date Updated: June 15, 2020
+* Prepared By: Natalie Stanley (stanleyn@stanford.edu)
+* Code Tested in: R version 3.4.4 (2018-03-15)
 
 Purpose: We introduce VoPo which enables end-to-end bioinformatics analysis of single-cell mass cytometry data. Here we provide code to reproduce the following results. 
 1) Running VoPo clustering on a few FCS files
