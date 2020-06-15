@@ -27,17 +27,18 @@ Dependencies: We use a number of R packages. Please make sure that you have thes
 
 # Installation Instructions
 
-* We assume that you have R installed. :) We used 3.4.4 to produce the results in this paper. R and the above packages are the only things that you need to install and we expect this to take minuts on a standard desktop computer.
+* We assume that you have R installed. :) We used R version 3.4.4 to produce the results in this paper. R and the above packages are the only things that you need to install and we expect this to take minuts on a standard desktop computer.
 
 * You can clone this git repository by 
 
 ```Bash
 git clone https://github.com/stanleyn/VoPo
 ```
-* You downloaded this directory into some place *YourPath*. Please change your working directory in R so that you are in this folder
+* You cloned this git repository into some place, *YourPath*. Once you are in R, please change your working directory in R so that you are in this folder
 
->setwd('YourPath/Reproduce')
-
+```R
+setwd('*YourPath')
+```
 Demos:
 
 *************************
