@@ -17,7 +17,7 @@ Alternatively, in (4) we have provided an example for re-running all clustering 
 4) Re-running the repeated metaclustering strategy from scratch along with classification and visualization. Note that this task requires downloading FCS files from each dataset. 
 
 
-Dependencies: We use a number of R packages. Please make sure that you have these packages installed. 'flowCore',
+Dependencies: We use a number of R packages. Please make sure that you have these packages installed. `flowCore`,
 -foreach
 -doParallel
 -iterators
