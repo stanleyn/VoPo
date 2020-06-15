@@ -34,7 +34,7 @@ Dependencies: We use a number of R packages. Please make sure that you have thes
 ```Bash
 git clone https://github.com/stanleyn/VoPo
 ```
-* You cloned this git repository into some place, *YourPath*. Once you are in R, please change your working directory in R so that you are in this folder
+* You cloned this git repository into some place, `*YourPath*`. Once you are in R, please change your working directory in R so that you are in this folder
 
 ```R
 setwd('*YourPath')
