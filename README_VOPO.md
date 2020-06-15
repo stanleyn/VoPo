@@ -41,11 +41,13 @@ setwd('*YourPath*')
 ```
 # Demos and Reproduction of Results
 
-##Task 1: Run VoPo clustering on some FCS files
+## Task 1: Run VoPo clustering on some FCS files
 
 * Here is a script for a quick demo for how to run VoPo clustering on FCS files. Once you have run this script, use the output to perform classification and visualization tasks (see Tasks 2-4). 
 
 * This demo should take less than 5 minutes to run on a standard computer. We used 5 cores in this example.
+
+* Please see `Demo_VoPo` script for a description of the inputs, etc.
 
 ```R
 source('Demo_Data/Demo_VoPo.R')
@@ -53,12 +55,11 @@ source('Demo_Data/Demo_VoPo.R')
 
 This script created a VoPo object called `Build` that can be used for further tasks.
 
-**************************
-##########################
-#Task 2: Generate Distributions of Classification Accuracies for Single vs. Repeated Metaclustering Solutions (Fig 2D.)
-#########################
-***************************
-Assuming you are in the Reproduce directory, we will show how to create the boxplots shown in Fig2D for each dataset
+**To do: add line to get frequency-related features out**
+
+## Task 2: Generate Distributions of Classification Accuracies for Single vs. Repeated Metaclustering Solutions (Fig 2D.)
+
+Assuming you are in the cloned home directory, we will show how to create the boxplots shown in Fig2D for each dataset
 
 ##################################
 #Hip Surgery Recovery Dataset (HSR)
