@@ -1,5 +1,5 @@
 
-# Overview
+# Overview and Instructions
 
 ## Updates and Contact Information
 
@@ -25,7 +25,7 @@ Alternatively, in (4) we have provided an example for re-running all clustering 
 
 Dependencies: We use a number of R packages. Please make sure that you have these packages installed. `flowCore`, `foreach`, `doParallel`, `iterators`, `plyr`, `randomForest`, `matrixStats`,`ROCR`,`FastKNN`, `miscTools`, `ggplot2`, `reshape2`, `viridis`, `pROC`, `igraph`.
 
-# Installation Instructions
+## Installation Instructions
 
 * We assume that you have R installed. :) We used R version 3.4.4 to produce the results in this paper. R and the above packages are the only things that you need to install and we expect this to take minuts on a standard desktop computer.
 
@@ -34,28 +34,24 @@ Dependencies: We use a number of R packages. Please make sure that you have thes
 ```Bash
 git clone https://github.com/stanleyn/VoPo
 ```
-* You cloned this git repository into some place, `*YourPath*`. Once you are in R, please change your working directory in R so that you are in this folder
+* You cloned this git repository into some place, `*YourPath*`. Once you are in R, please change your working directory in R so that you are in this folder, as all paths are relative to here.
 
 ```R
-setwd('*YourPath')
+setwd('*YourPath*')
 ```
-Demos:
+# Demos and Reproduction of Results
 
-*************************
-#########################
-#Task 1: Run VoPo clustering on some FCS files
-*************************
-########################
+##Task 1: Run VoPo clustering on some FCS files
 
-Here is a script for a quick demo for how to run VoPo clustering on FCS files. Once you have run this script, use the output to perform classification and visualization tasks (see Tasks 2-4). 
+* Here is a script for a quick demo for how to run VoPo clustering on FCS files. Once you have run this script, use the output to perform classification and visualization tasks (see Tasks 2-4). 
 
-This demo should take less than 5 minutes to run on a standard computer. We used 5 cores in this example.
+* This demo should take less than 5 minutes to run on a standard computer. We used 5 cores in this example.
 
->setwd('YourPath/Reproduce')
->source('Demo_Data/Demo_VoPo.R')
->MyOutput=Build
+```R
+source('Demo_Data/Demo_VoPo.R')
+```
 
-#This creates a list called Build, which is the processed data that you can use for further tasks. 
+This script created a VoPo object called `Build` that can be used for further tasks.
 
 **************************
 ##########################
