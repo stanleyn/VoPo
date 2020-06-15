@@ -31,8 +31,9 @@ Dependencies: We use a number of R packages. Please make sure that you have thes
 
 * You can clone this git repository by 
 
+```Bash
 git clone https://github.com/stanleyn/VoPo
-
+```
 * You downloaded this directory into some place *YourPath*. Please change your working directory in R so that you are in this folder
 
 >setwd('YourPath/Reproduce')
