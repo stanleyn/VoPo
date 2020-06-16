@@ -39,6 +39,9 @@ git clone https://github.com/stanleyn/VoPo
 ```R
 setwd('*YourPath*')
 ```
+## License
+This software is licensed under Apache License, Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0). 
+
 # Demos and Reproduction of Results
 
 ## Task 1: Run VoPo clustering on some FCS files
@@ -111,74 +114,77 @@ source('PaperFigures/Visualization/StrokeViz.R')
 
 You can now find plots for all markers and differentiation scores in OutDir/Stroke_Viz
 
-**************************
-##########################
-#Task 4: Re-run clustering from scratch. Use that clustering result to generate classification results and visualizations (Fig 2D.)
-#########################
-***************************
+## Task 4: Re-run clustering from scratch. Use that clustering result to generate classification results and visualizations (Fig 2D.)
 
--You can run this part of the code if you have access to the raw FCS files. You will need to go in and change the path to the FCS files depending on where you download them. The place where you need to change the path is clearly marked :)
--These scripts will re-run the classification and visualization pipelines
+* You can run this part of the code if you have access to the raw FCS files. You will need to go in and change the path to the FCS files depending on where you download them. The place where you need to change the path is clearly marked :)
 
-##################################
-#Hip Surgery Recovery Dataset (HSR)
-##################################
+* These scripts will re-run the classification and visualization pipelines
 
->setwd('YourPath/Reproduce')
+### Hip Surgery Recovery Dataset (HSR)
 
--Make sure that the order of your Files matches these names
+Make sure that the order of your Files matches these names
+
+```R
 >Meta_Surgery=readRDS('Processed/Meta_Surgery')
 >Meta_Surgery$FileNames
+```
 
--Change the path in the below script to wherever your FCS files are!!!!!
+*Change the path in the below script to wherever your FCS files are!!!!!*
 
->source('PaperFigures/RunClustering/SurgeryRe.R')
+```R
+source('PaperFigures/RunClustering/SurgeryRe.R')
+```
 
--You can find the visualization results in OutDir/Surgery_Viz
--You can find the AUCs from 30 runs of the cross validation pipeline stores in the vector AUCs
+* You can find the visualization results in OutDir/Surgery_Viz
 
->AUCs 
+* You can find the AUCs from 30 runs of the cross validation pipeline stores in the vector AUCs
 
-##################################
-#Normal Term Pregnancy Dataset (NTP)
-###################################
->setwd('YourPath/Reproduce')
+```R
+AUCs 
+```
 
--Make sure that the order of your Files matches these names
->Meta_Preg=readRDS('Processed/Meta_Pregnancy')
->Meta_Preg$FileNames
+### Normal Term Pregnancy Dataset (NTP)
 
--Change the path in the below script to wherever your FCS files are!!!!
+Make sure that the order of your Files matches these names
 
+```R
+Meta_Preg=readRDS('Processed/Meta_Pregnancy')
+Meta_Preg$FileNames
+```
+
+*Change the path in the below script to wherever your FCS files are!!!!*
+
+```R
 >source('PaperFigures/RunClustering/PregnancyRe.R')
+```
 
--You can find the visualization results in OutDir/Pregnancy_Viz
--You can find the AUCs from 30 runs of the cross validation pipeline stores in the vector AUCs
+* You can find the visualization results in OutDir/Pregnancy_Viz
 
->AUCs 
+* You can find the AUCs from 30 runs of the cross validation pipeline stores in the vector AUCs
 
-###################################
-#Longitudinal Stroke Recovery Dataset (LSR)
-###################################
->setwd('YourPath/Reproduce')
+```R
+AUCs
+``` 
 
--Make sure that the order of your Files matches these names
->Meta_Stroke=readRDS('Processed/Meta_Stroke')
->Meta_Stroke$FileNames
+### Longitudinal Stroke Recovery Dataset (LSR)
 
--Change the path in the below script to wherever your FCS files are!!!!
+Make sure that the order of your Files matches these names
 
->source('PaperFigures/RunClustering/StrokeRe.R')
+```R
+Meta_Stroke=readRDS('Processed/Meta_Stroke')
+Meta_Stroke$FileNames
+```
 
--You can find the visualization results in OutDir/Stroke_Viz
--You can find the AUCs from 30 runs of the cross validation pipeline stores in the vector AUCs
+*Change the path in the below script to wherever your FCS files are!!!!*
 
->AUCs
+```R
+source('PaperFigures/RunClustering/StrokeRe.R')
+```
 
-#############################################
-#############################################
-#License
-#############################################
-#############################################
+* You can find the visualization results in OutDir/Stroke_Viz
 
-This software is licensed under Apache License, Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0). 
+* You can find the AUCs from 30 runs of the cross validation pipeline stores in the vector AUCs
+
+```R
+AUCs
+```
