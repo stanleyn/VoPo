@@ -23,7 +23,7 @@ Alternatively, in (4) we have provided an example for re-running all clustering 
 
 ## Dependencies
 
-Dependencies: We use a number of R packages. Please make sure that you have these packages installed. `flowCore`, `foreach`, `doParallel`, `iterators`, `plyr`, `randomForest`, `matrixStats`,`ROCR`,`FastKNN`, `miscTools`, `ggplot2`, `reshape2`, `viridis`, `pROC`, `igraph`.
+Dependencies: We use a number of R packages. Please make sure that you have these packages installed. `flowCore`, `FNN`, `foreach`, `doParallel`, `iterators`, `plyr`, `randomForest`, `matrixStats`,`ROCR`,`FastKNN`, `miscTools`, `ggplot2`, `reshape2`, `viridis`, `pROC`, `igraph`.
 
 ## Installation Instructions
 
@@ -59,63 +59,55 @@ This script created a VoPo object called `Build` that can be used for further ta
 
 ## Task 2: Generate Distributions of Classification Accuracies for Single vs. Repeated Metaclustering Solutions (Fig 2D.)
 
-Assuming you are in the cloned home directory, we will show how to create the boxplots shown in Fig2D for each dataset
+* Assuming you are in the cloned home directory, we will show how to create the boxplots shown in Fig2D for each dataset
+* Results will be written to the `OutDir` directory.
 
-##################################
-#Hip Surgery Recovery Dataset (HSR)
-##################################
->setwd('YourPath/Reproduce')
->source('PaperFigures/Classification/Class_Surgery.R')
+### Hip Surgery Recovery Dataset (HSR)
 
+```R
+source('PaperFigures/Classification/Class_Surgery.R')
+```
 You can now find your boxplots in OutDir as SurgDist.pdf
 
-##################################
-#Normal Term Pregnancy Dataset (NTP)
-###################################
->setwd('YourPath/Reproduce')
->source('PaperFigures/Classification/Class_Pregnancy.R')
+### Normal Term Pregnancy Dataset (NTP)
 
+```R
+source('PaperFigures/Classification/Class_Pregnancy.R')
+```
 You can now find your boxplots in OutDir as Preg_Dist.pdf
 
-###################################
-#Longitudinal Stroke Recovery Dataset (LSR)
-###################################
->setwd('YourPath/Reproduce')
->source('PaperFigures/Classification/Class_Stroke.R')
+### Longitudinal Stroke Recovery Dataset (LSR)
 
+```R
+source('PaperFigures/Classification/Class_Stroke.R')
+```
 You can now find your boxplots in OutDir as Stroke_Dist.pdf
 
-**************************
-##########################
-#Task 3: Comprehensive Single-Cell Visualizations for each Dataset(Fig 2D.)
-##########################
-***************************
+## Task 3: Comprehensive Single-Cell Visualizations for each Dataset(Fig 2D.)
 
--Results for each dataset will be within their respective folder in OutDir. 
--There is a plot for each surface marker showing its expression across cells (ex. CD3.jpg shows CD3 expression)
--pval.jpg plot colors the cells by their differentiation scores computed by the algorithm. 
+* Results for each dataset will be within their respective folder in OutDir. 
+* There is a plot for each surface marker showing its expression across cells (ex. CD3.jpg shows CD3 expression)
+* pval.jpg plot colors the cells by their differentiation scores computed by the algorithm. 
 
-##################################
-#Hip Surgery Recovery Dataset (HSR)
-##################################
->setwd('YourPath/Reproduce')
->source('PaperFigures/Visualization/SurgeryViz.R')
+### Hip Surgery Recovery Dataset (HSR)
 
+```R
+source('PaperFigures/Visualization/SurgeryViz.R')
+```
 You can now find plots for all markers and differentiation scores in OutDir/Surgery_Viz
 
-##################################
-#Normal Term Pregnancy Dataset (NTP)
-###################################
->setwd('YourPath/Reproduce')
->source('PaperFigures/Visualization/PregnancyViz.R')
+### Normal Term Pregnancy Dataset (NTP)
 
+```R
+source('PaperFigures/Visualization/PregnancyViz.R')
+```
 You can now find plots for all markers and differentiation scores in OutDir/Pregnancy_Viz
 
-###################################
-#Longitudinal Stroke Recovery Dataset (LSR)
-###################################
->setwd('YourPath/Reproduce')
->source('PaperFigures/Visualization/StrokeViz.R')
+### Longitudinal Stroke Recovery Dataset (LSR)
+
+```R
+source('PaperFigures/Visualization/StrokeViz.R')
+```
 
 You can now find plots for all markers and differentiation scores in OutDir/Stroke_Viz
 
