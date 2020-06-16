@@ -125,8 +125,8 @@ You can now find plots for all markers and differentiation scores in OutDir/Stro
 Make sure that the order of your Files matches these names
 
 ```R
->Meta_Surgery=readRDS('Processed/Meta_Surgery')
->Meta_Surgery$FileNames
+Meta_Surgery=readRDS('Processed/Meta_Surgery')
+Meta_Surgery$FileNames
 ```
 
 *Change the path in the below script to wherever your FCS files are!!!!!*
