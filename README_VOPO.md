@@ -144,11 +144,7 @@ source('PaperFigures/RunClustering/SurgeryRe.R')
 
 * You can find the visualization results in OutDir/Surgery_Viz
 
-* You can find the AUCs from 30 runs of the cross validation pipeline stores in the vector AUCs
-
-```R
-AUCs 
-```
+* You can find the AUCs from 30 runs of the cross validation pipeline stores in the vector `AUCs`
 
 ### Normal Term Pregnancy Dataset (NTP)
 
@@ -162,16 +158,12 @@ Meta_Preg$FileNames
 *Change the path in the below script to wherever your FCS files are!!!!*
 
 ```R
->source('PaperFigures/RunClustering/PregnancyRe.R')
+source('PaperFigures/RunClustering/PregnancyRe.R')
 ```
 
 * You can find the visualization results in OutDir/Pregnancy_Viz
 
-* You can find the AUCs from 30 runs of the cross validation pipeline stores in the vector AUCs
-
-```R
-AUCs
-``` 
+* You can find the AUCs from 30 runs of the cross validation pipeline stores in the vector `AUCs`
 
 ### Longitudinal Stroke Recovery Dataset (LSR)
 
@@ -190,8 +182,5 @@ source('PaperFigures/RunClustering/StrokeRe.R')
 
 * You can find the visualization results in OutDir/Stroke_Viz
 
-* You can find the AUCs from 30 runs of the cross validation pipeline stores in the vector AUCs
+* You can find the AUCs from 30 runs of the cross validation pipeline stores in the vector `AUCs`
 
-```R
-AUCs
-```
