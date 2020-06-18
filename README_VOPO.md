@@ -56,7 +56,16 @@ This software is licensed under Apache License, Version 2.0 (https://www.apache.
 source('Demo_Data/Demo_VoPo.R')
 ```
 
-This script created a VoPo object called `Build` that can be used for further tasks.
+* This script created a VoPo object called `Build` that can be used for further tasks.
+
+* If you want to extract frequency-related features from VoPo clustering object, `Build`, and the vector of file names you gave to VoPo 'FNames' you can do this with the following:
+
+```R
+source('VoPo_main/getFrequencyFeature.R')
+FrequencyFeatures=getFrequencyFeature(Build,FNames)
+
+This is the data matrix you can use for classification tasks.
+
 
 **To do: add line to get frequency-related features out**
 

@@ -18,6 +18,9 @@ source('VoPo_main/runRepMetaclust.R')
 #Put the path to your FCS files
 FileNames=list.files(path='Demo_Data',pattern='.fcs',full.names=TRUE)
 
+#It's also nice to have a short-hand vector of filenames for keeping track of samples
+FNames=list.files(path='Demo_Data',pattern='.fcs',full.names=FALSE)
+
 #These are the human read-able antibody names corresponding to the columns of each FCS file
 MN=readRDS('Processed/MN_Surgery.rds')
 
