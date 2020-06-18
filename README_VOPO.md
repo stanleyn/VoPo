@@ -67,9 +67,6 @@ FrequencyFeatures=getFrequencyFeature(Build,FNames)
 
 This is the data matrix you can use for classification tasks.
 
-
-**To do: add line to get frequency-related features out**
-
 ## Task 2: Generate Distributions of Classification Accuracies for Single vs. Repeated Metaclustering Solutions (Fig 2D.)
 
 * Assuming you are in the cloned home directory, we will show how to create the boxplots shown in Fig2D for each dataset
@@ -96,7 +93,7 @@ source('PaperFigures/Classification/Class_Stroke.R')
 ```
 You can now find your boxplots in OutDir as Stroke_Dist.pdf
 
-## Task 3: Comprehensive Single-Cell Visualizations for each Dataset(Fig 2D.)
+## Task 3: Comprehensive Single-Cell Visualizations for each Dataset (Fig 2A-C.)
 
 * Results for each dataset will be within their respective folder in OutDir. 
 * There is a plot for each surface marker showing its expression across cells (ex. CD3.jpg shows CD3 expression)
