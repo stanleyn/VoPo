@@ -202,13 +202,13 @@ Meta_Stroke=readRDS('Processed/Meta_Stroke')
 Meta_Stroke$FileNames
 ```
 
-*Change the path in the below script to wherever your FCS files are!!!!*
+**Change the path in the below script to wherever your FCS files are!!!!**
 
 ```R
 source('PaperFigures/RunClustering/StrokeRe.R')
 ```
 
-* You can find the visualization results in OutDir/Stroke_Viz
+You can find the visualization results in OutDir/Stroke_Viz
 
-* You can find the AUCs from 30 runs of the cross validation pipeline stores in the vector `AUCs`
+ You can find the AUCs from 30 runs of the cross validation pipeline stores in the vector `AUCs`
 
