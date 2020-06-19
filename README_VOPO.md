@@ -83,6 +83,7 @@ The resulting vector of classification accuracies is `ClAcc`
 
 We can also create the boxplots from figure 2D in the HSR dataset.
 
+```R
 source('PaperFigures/Classification/Class_Surgery.R')
 ```
 You can now find your boxplots in OutDir as SurgDist.pdf
