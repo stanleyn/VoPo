@@ -69,17 +69,35 @@ This is the data matrix you can use for classification tasks.
 
 ## Task 2: Generate Distributions of Classification Accuracies for Single vs. Repeated Metaclustering Solutions (Fig 2D.)
 
-* Assuming you are in the cloned home directory, we will show how to create the boxplots shown in Fig2D for each dataset
-* Results will be written to the `OutDir` directory.
+* For each dataset, we will show you how to generate a distribution of classification accuracies from the VoPo engineered features
+* We will also generate the boxplots (baseline to VoPo distribution comparison in figure 2D and figures with appear in the 'OutDir' directory.
 
 ### Hip Surgery Recovery Dataset (HSR)
 
+Get a distribution of VoPo classification accuracies for HSR dataset
 ```R
+source('Examples/Class_Surgery_Example.R')
+```
+
+The resulting vector of classification accuracies is `ClAcc`
+
+We can also create the boxplots from figure 2D in the HSR dataset.
+
 source('PaperFigures/Classification/Class_Surgery.R')
 ```
 You can now find your boxplots in OutDir as SurgDist.pdf
 
 ### Normal Term Pregnancy Dataset (NTP)
+
+Get a distribution of VoPo classification accuracies for the NTP dataset
+
+```R
+source('Examples/Class_Surgery_Example.R')
+```
+
+The resulting vector of classification accuracies is `ClAcc`.
+
+We can also create the boxplots for Figure 2D in the NTP dataset.
 
 ```R
 source('PaperFigures/Classification/Class_Pregnancy.R')
@@ -87,6 +105,16 @@ source('PaperFigures/Classification/Class_Pregnancy.R')
 You can now find your boxplots in OutDir as Preg_Dist.pdf
 
 ### Longitudinal Stroke Recovery Dataset (LSR)
+
+Get a distribution of VoPo classification accuracies in the LSR dataset.
+
+```R
+source('Examples/Class_Stroke_Example.R')
+```
+
+The resulting vector of classification accuracies is `ClAcc`
+
+We can also generate boxplots for the HSR dataset from Figure 2D
 
 ```R
 source('PaperFigures/Classification/Class_Stroke.R')
