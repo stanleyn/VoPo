@@ -58,7 +58,7 @@ source('Demo_Data/Demo_VoPo.R')
 
 * This script created a VoPo object called `Build` that can be used for further tasks.
 
-* If you want to extract frequency-related features from VoPo clustering object, `Build`, and the vector of file names you gave to VoPo 'FNames' you can do this with the following:
+* If you want to extract frequency-related features from VoPo clustering object, `Build`, and the vector of file names you gave to VoPo `FNames` in the above Demo_VoPo script, you can do this with the following:
 
 ```R
 source('VoPo_main/getFrequencyFeature.R')
