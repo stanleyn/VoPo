@@ -5,7 +5,7 @@
 
 * Date Updated: June 15, 2020
 * Prepared By: Natalie Stanley (stanleyn@stanford.edu)
-* Code Tested in: R version 3.4.4 (2018-03-15)
+* Code Tested in: R version 3.4.4 
 
 ## Purpose
 
