@@ -165,7 +165,7 @@ Meta_Surgery=readRDS('Processed/Meta_Surgery')
 Meta_Surgery$FileNames
 ```
 
-*Change the path in the below script to wherever your FCS files are!!!!!*
+**Change the path in the below script to wherever your FCS files are!!!!!**
 
 ```R
 source('PaperFigures/RunClustering/SurgeryRe.R')
@@ -184,7 +184,7 @@ Meta_Preg=readRDS('Processed/Meta_Pregnancy')
 Meta_Preg$FileNames
 ```
 
-*Change the path in the below script to wherever your FCS files are!!!!*
+**Change the path in the below script to wherever your FCS files are!!!!**
 
 ```R
 source('PaperFigures/RunClustering/PregnancyRe.R')
