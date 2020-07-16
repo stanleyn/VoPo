@@ -11,7 +11,7 @@
 
 We introduce VoPo which enables end-to-end bioinformatics analysis of single-cell data. Here we provide code for general usage and to reproduce the results in our paper `VoPo Leverages Cellular Heterogeneity for Predictive Modeling of Single-Cell Data`. The (4) tasks outlined in this readme enable the following:
 
-- [Task 1: Run VoPo clustering on some FCS files]{##Task 1: Run VoPo clustering on some FCS files} 
+1) [Task1]{##Task 1: Run VoPo clustering on some FCS files} Run VoPo clustering on some FCS files
 
 2) Use VoPo features for classification tasks in each of the 3 datasets. Also reproduce the results in Figure 2D. Generating distributions of classification accuracies from single vs. repeated metaclustering solutions (Figure 2D.). 
 
@@ -20,6 +20,8 @@ We introduce VoPo which enables end-to-end bioinformatics analysis of single-cel
 Alternatively, in (4) we have provided an example for re-running all clustering results from scratch. However this will require downloading FCS files from flow repository and modifying the paths in the scripts to the data, accordingly.  
 
 4) Re-running the repeated metaclustering strategy from scratch along with classification and visualization. Note that this task requires downloading FCS files from each dataset. 
+
+5) Examples on how to create single-cell visualizations with points colored by differentiation score (Fig 2 a-c) for frequency features and for function features. 
 
 ## Dependencies
 
@@ -221,4 +223,31 @@ source('PaperFigures/RunClustering/StrokeRe.R')
 You can find the visualization results in OutDir/Stroke_Viz
 
 You can find the AUCs from 30 runs of the cross validation pipeline stores in the vector `AUCs`
+
+## Task 5: Create single-cell visualization with each cell computed by differentiation score. 
+
+* Here we will show examples of how to color by differentation score for Frequency Based Features and Functional Features.
+* I will tell you the functions to use here. Examples coming soon! Inputs should be similar to what you have seen above.
+* A differentiation score plot based on frequency will ultimately create a single plot.
+* Using functional marker features, we will get one differentiation score plot for each functional marker.
+
+Instructions for making differentiation score plots for both frequency and function
+
+* Step 1: Select a large subset of cells across all of your FCS files. Use function, 
+
+```R
+source('VoPo_main/SampleCells.R') 
+```
+
+* Step 2: Make a frequency map. Each cell will be colored by differentiation score according to frequency. Use the function,
+
+```R
+source('VoPo_main/vizFrequencyMap.R')
+```
+
+* Step 3: Make functional maps. For each functional marker in your panel, each cell will be colored according to differentiation score based on the expression of that particular functional marker. Note that as one of the functional arguments you will specify the directory to write these plots to. They will all go to one place. Use the function,
+
+```R
+source('VoPo_main/vizFunctionMaps.R')
+```
 
