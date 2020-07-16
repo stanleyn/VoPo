@@ -11,11 +11,11 @@
 
 We introduce VoPo which enables end-to-end bioinformatics analysis of single-cell data. Here we provide code for general usage and to reproduce the results in our paper `VoPo Leverages Cellular Heterogeneity for Predictive Modeling of Single-Cell Data`. The (4) tasks outlined in this readme enable the following:
 
-1) Run VoPo clustering on a few FCS files
+- [Task 1: Run VoPo clustering on some FCS files]{#Task 1: Run VoPo clustering on some FCS files} 
 
 2) Use VoPo features for classification tasks in each of the 3 datasets. Also reproduce the results in Figure 2D. Generating distributions of classification accuracies from single vs. repeated metaclustering solutions (Figure 2D.). 
 
-3) Generate comprehensive single-cell visualizations for each of the 3 datasets (Figure 2A-C). Uses processed data from running 50 iterations of the repeated clustering algorithm. 
+3) Generate comprehensive single-cell visualizations for each of the 3 datasets (Figure 2A-C). Uses processed data from running 50 iterations of the repeated metaclustering algorithm. 
 
 Alternatively, in (4) we have provided an example for re-running all clustering results from scratch. However this will require downloading FCS files from flow repository and modifying the paths in the scripts to the data, accordingly.  
 
@@ -65,11 +65,20 @@ source('VoPo_main/getFrequencyFeature.R')
 FrequencyFeatures=getFrequencyFeature(Build,FNames)
 ```
 
-This is the data matrix you can use for classification tasks.
+This is the data matrix you can use for classification tasks (like we did in the paper). However, in the below example I show you how you can also get function-related features.
+
+* You can also extract function based features. You will input `Build` (the VoPo clustering object), `FNames`, which are the filenames in the order you gave them to VoPo (see Demo_VoPo script) and `FInds`, which are the indices of functional markers in your FCS files
+
+```R
+source('VoPo_main/getFunctionalFeature')
+#Here are the indices of the functional markers
+FInds=readRDS('Processed/FI_HSR.rds')
+FunctionalFeatures=getFunctionalFeature(Build,FNames,FInds)
+```
 
 ## Task 2: Generate Distributions of Classification Accuracies for Single vs. Repeated Metaclustering Solutions (Fig 2D.)
 
-* For each dataset, we will show you how to generate a distribution of classification accuracies from the VoPo engineered features
+* For each dataset, we will show you how to generate a distribution of classification accuracies from the VoPo engineered features. For each dataset, the first example referring to the script in the `Examples` directory shows how you can build a model based on the extracted features.
 * We will also generate the boxplots (baseline to VoPo distribution comparison in figure 2D and figures with appear in the 'OutDir' directory.
 
 ### Hip Surgery Recovery Dataset (HSR)
@@ -211,5 +220,5 @@ source('PaperFigures/RunClustering/StrokeRe.R')
 
 You can find the visualization results in OutDir/Stroke_Viz
 
- You can find the AUCs from 30 runs of the cross validation pipeline stores in the vector `AUCs`
+You can find the AUCs from 30 runs of the cross validation pipeline stores in the vector `AUCs`
 
