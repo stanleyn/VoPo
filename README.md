@@ -227,7 +227,7 @@ You can find the AUCs from 30 runs of the cross validation pipeline stores in th
 ## Task 5: Create single-cell visualization with each cell computed by differentiation score. 
 
 * Here we will show examples of how to color by differentation score for Frequency Based Features and Functional Features.
-* I will tell you the functions to use here. Examples coming soon! Inputs should be similar to what you have seen above.
+* I will tell you the functions to use here. **Examples coming soon!** Inputs should be similar to what you have seen above.
 * A differentiation score plot based on frequency will ultimately create a single plot.
 * Using functional marker features, we will get one differentiation score plot for each functional marker.
 
