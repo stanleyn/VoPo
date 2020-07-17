@@ -46,7 +46,7 @@ This software is licensed under Apache License, Version 2.0 (https://www.apache.
 
 # Demos and Reproduction of Results
 
-## Task 1: Run VoPo clustering on some FCS files
+## Task 1: Run VoPo Clustering and Extract Features
 
 * Here is a script for a quick demo for how to run VoPo clustering on FCS files. Once you have run this script, use the output to perform classification and visualization tasks (see Tasks 2-4). 
 
