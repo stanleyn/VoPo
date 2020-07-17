@@ -109,7 +109,7 @@ We will generate a distribution of classification accuracies, repeating the cros
 * Y: vector of class labels (as factor) corresponding to the rows of FuncDF
 * FPV: The number of features to use per clustering solution
 * IterNumClus: Number of clusters per clustering iteration, extracted from the VoPo clustering object generated with `runRepMetaclust.R`
-* propTrain: Proportion of patients to use for training
+* propTrain: Proportion of patients to use for training. Here we are using 70%.
 * numPerm: The number of leave-group-out cross validation trials to do 
 * sampId: The IDs of the samples corresponding to the rows of FuncDF
 * numCore: number of cores to use for parallelization
