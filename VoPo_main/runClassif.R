@@ -14,11 +14,12 @@ source('Helper/MultiviewFS.R')
 source('Helper/GetTopFeat.R')
 library('FastKNN')
 #inputs:
-	#FuncDF: The sample x feature per iteration matrix returned by B2
+	#FuncDF: The sample x feature per iteration matrix returned by runRepMetaclust.R
 	#Y: the binary response vector
 	#FPV: The number of features to use per view. 
 	#IterNumClus: The number of clusters per iteration
 	#propTrain: the proportion of the data to train with
+	#numPerm: Number of classification trials to do
 	#sampID: Your input will either be 0 or a vector of subject IDs for each sample. Input a vector of subjectIDs for each sample if every subject has more than 1 FCS file.
 	#numCore: The number of cores to use for parallelization
 #Output:
