@@ -117,7 +117,7 @@ We will generate a distribution of classification accuracies, repeating the cros
 ```R
 ClAcc=runClassif(FuncDF=FreqDF,Y=Meta_Surgery$Class,FPV=40,IterNumClus=Build_Surgery$IterNumClus,propTrain=0.7,numPerm=50,sampID=as.character(Meta_Surgery$Subject),numCore=10)
 ```
-## Task 3: Generate Distributions of Classification Accuracies in all 3 Datasets (Reproduce Fig 2D.)
+## Task 3: Classification Accuracies in all 3 Datasets (Reproduce Fig 2D.)
 
 * For each dataset, we will show you how to generate a distribution of classification accuracies from the VoPo engineered features. For each dataset, the first example referring to the script in the `Examples` directory shows how you can build a model based on the extracted features.
 * We will also generate the boxplots (baseline to VoPo distribution comparison in figure 2D and figures with appear in the 'OutDir' directory.
