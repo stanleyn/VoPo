@@ -84,7 +84,7 @@ FunctionalFeatures=getFunctionalFeature(Build,FNames,FInds)
 
 We will show an example of how to use VoPo generated frequency features extracted using the `getFrequencyFeature.R` function. Our proposed example starts with a pre-processed VoPo clustering object obtained from the HSR dataset by running the function `runRepMetaclust.R`. 
 
-Read in processed VoPo clustering result
+Read in processed VoPo clustering result.
 
 ```R
 Build_Surgery=readRDS('Processed/Build_Surgery.rds')
