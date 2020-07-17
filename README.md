@@ -80,7 +80,7 @@ FInds=readRDS('Processed/FI_HSR.rds')
 FunctionalFeatures=getFunctionalFeature(Build,FNames,FInds)
 ```
 
-## Task 2: Using Engineered for Classification.
+## Task 2: Using Engineered Features for Classification.
 
 We will show an example of how to use VoPo generated frequency features extracted using the `getFrequencyFeature.R` function. Our proposed example starts with a pre-processed VoPo clustering object obtained from the HSR dataset by running the function `runRepMetaclust.R`. 
 
