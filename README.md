@@ -278,15 +278,34 @@ Instructions for making differentiation score plots for both frequency and funct
 source('VoPo_main/SampleCells.R') 
 ```
 
-* Step 2: Make a frequency map. Each cell will be colored by differentiation score according to frequency. Use the function,
+* Step 2: Color the sampled cells by phenotypic marker expression
 
 ```R
-source('VoPo_main/vizFrequencyMap.R')
+source('VoPo_main/vizAtlas_Phenotype')
+
+* Step 3: Make a frequency map. Each cell will be colored by differentiation score according to frequency. Use the function,
+
+```R
+source('VoPo_main/vizAtlas_Freq.R')
 ```
 
-* Step 3: Make functional maps. For each functional marker in your panel, each cell will be colored according to differentiation score based on the expression of that particular functional marker. Note that as one of the functional arguments you will specify the directory to write these plots to. They will all go to one place. Use the function,
+* Step 4: Make functional maps. For each functional marker in your panel, each cell will be colored according to differentiation score based on the expression of that particular functional marker. Note that as one of the functional arguments you will specify the directory to write these plots to. They will all go to one place. Use the function,
 
 ```R
-source('VoPo_main/vizFunctionMaps.R')
+source('VoPo_main/vizAtlas_Function.R')
+```
+
+We also have functions for making directrional plots, which will indicate which class has higher frequency or function. By default, it will use the minimum value of the response vector (e.g. sample classifications) to be colored blue and the maximum value of the response vector (e.g. sample classifications) to be colored blue. So, if a point is colored red, it means it likely belongs to a cell-population where the functional marker expression/frequency was likely increased.
+
+To make a frequency single-cell map with colors indicating direction:
+
+```R
+source('VoPo_main/vizAtlas_Freq_Directional.R')
+```
+
+To make a frequency single-cell map with colors indicating direction:
+
+```R
+source('VoPo_main/vizAtlas_Function_Directional.R')
 ```
 
