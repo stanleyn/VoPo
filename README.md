@@ -282,7 +282,7 @@ source('VoPo_main/SampleCells.R')
 
 ```R
 source('VoPo_main/vizAtlas_Phenotype')
-
+```
 * Step 3: Make a frequency map. Each cell will be colored by differentiation score according to frequency. Use the function,
 
 ```R
