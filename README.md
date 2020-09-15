@@ -54,7 +54,7 @@ This software is licensed under Apache License, Version 2.0 (https://www.apache.
 
 * This demo should take less than 5 minutes to run on a standard computer. We used 5 cores in this example.
 
-* Please see `Demo_VoPo` script for a description of the inputs, etc.
+* Please see `Demo_VoPo.R` script for a description of the inputs, etc.
 
 ```R
 source('Demo_Data/Demo_VoPo.R')
@@ -62,7 +62,7 @@ source('Demo_Data/Demo_VoPo.R')
 
 * This script created a VoPo object called `Build` that can be used for further tasks.
 
-* If you want to extract frequency-related features from VoPo clustering object, `Build`, and the vector of file names you gave to VoPo `FNames` in the above Demo_VoPo script, you can do this with the following:
+* If you want to extract frequency-related features from VoPo clustering object, `Build`, and the vector of file names you gave to VoPo `FNames` in the above `Demo_VoPo.R` script, you can do this with the following:
 
 ```R
 source('VoPo_main/getFrequencyFeature.R')
