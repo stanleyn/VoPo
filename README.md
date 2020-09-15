@@ -15,15 +15,15 @@ We introduce VoPo which enables end-to-end bioinformatics analysis of single-cel
 
 2) **Task 2: Example of how to use engineered features for a classification task**: After extracting VoPo features, we show you how to apply feature selection and run the classification task
 
-2) **Task 3: Classification in all 3 datasets (Fig 2D)**: Feature Use VoPo features for classification tasks in each of the 3 datasets. Also reproduce the results in Figure 2D. Generating distributions of classification accuracies from single vs. repeated metaclustering solutions (Figure 2D.). 
+3) **Task 3: Classification in all 3 datasets (Fig 2D)**: Feature Use VoPo features for classification tasks in each of the 3 datasets. Also reproduce the results in Figure 2D. Generating distributions of classification accuracies from single vs. repeated metaclustering solutions (Figure 2D.). 
 
-3) **Task 4: Differentiation Score Visualization (Figs 2a-c)**: Generate comprehensive single-cell visualizations for each of the 3 datasets (Figure 2A-C). Uses processed data from running 50 iterations of the repeated metaclustering algorithm. 
+4) **Task 4: Differentiation Score Visualization (Figs 2a-c)**: Generate comprehensive single-cell visualizations for each of the 3 datasets (Figure 2A-C). Uses processed data from running 50 iterations of the repeated metaclustering algorithm. 
 
-Alternatively, in (4) we have provided an example for re-running all clustering results from scratch. However this will require downloading FCS files from flow repository and modifying the paths in the scripts to the data, accordingly.  
+Alternatively, in (5) we have provided an example for re-running all clustering results from scratch. However this will require downloading FCS files from flow repository and modifying the paths in the scripts to the data, accordingly.  
 
-4) **Task 5: Re-run repeated metaclustering from scratch on the 3 datasets**: Re-running the repeated metaclustering strategy from scratch along with classification and visualization. Note that this task requires downloading FCS files from each dataset. 
+5) **Task 5: Re-run repeated metaclustering from scratch on the 3 datasets**: Re-running the repeated metaclustering strategy from scratch along with classification and visualization. Note that this task requires downloading FCS files from each dataset. 
 
-5) **Task 6: Visualize differentiation score on single cells based on frequency or function-based features**: Examples on how to create single-cell visualizations with points colored by differentiation score (Fig 2 a-c) for frequency features and for function features. 
+6) **Task 6: Visualize differentiation score on single cells based on frequency or function-based features**: Examples on how to create single-cell visualizations with points colored by differentiation score (Fig 2 a-c) for frequency features and for function features. 
 
 ## Dependencies
 
