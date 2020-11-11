@@ -147,7 +147,7 @@ print(min(pointVal))
 
  NetDF=data.frame(layout[,1],layout[,2],pointVal)
  names(NetDF)=c('PC1','PC2','pointVal')
-  p=ggplot(NetDF, aes(PC1,PC2,color=pointVal))+geom_point(size=.1)+scale_color_gradient2(low = muted("red"), mid = "gray95",high = muted("blue"), midpoint = 0, space = "Lab", na.value = "white", guide = "colourbar", aesthetics = "colour",limits=c(-4,4))+ theme_bw()+ theme(text = element_text(size=14))
+  p=ggplot(NetDF, aes(PC1,PC2,color=pointVal))+geom_point(size=.1)+scale_color_gradient2(low = muted("blue"), mid = "gray95",high = muted("red"), midpoint = 0, space = "Lab", na.value = "white", guide = "colourbar", aesthetics = "colour",limits=c(-4,4))+ theme_bw()+ theme(text = element_text(size=14))
    p=p+theme(axis.title.x = element_blank(),
 	       axis.title.y = element_blank())
    p=p+theme(axis.line = element_line(colour = "black"),
