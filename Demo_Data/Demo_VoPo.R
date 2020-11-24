@@ -25,7 +25,7 @@ FNames=list.files(path='Demo_Data',pattern='.fcs',full.names=FALSE)
 MN=readRDS('Processed/MN_Surgery.rds')
 
 #Note tha we have provided the pre-processed version of this here, but you can extract them as follows
-#frame=read.FCS(FileNames[1]
+#frame=read.FCS(FileNames[1])
 #MN=pData(parameters(frame))[,2]
 
 #To use gives the indices, corresponding to the columns of FCS files that you want to use for clustering
