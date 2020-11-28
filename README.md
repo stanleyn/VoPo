@@ -17,6 +17,8 @@ We introduce VoPo which enables end-to-end bioinformatics analysis of single-cel
 
 3) **Task 3: Differentiation Score Visualization Examples**: Generate comprehensive single-cell visualizations for each of the 3 datasets (Figure 2A-C). Uses processed data from running 50 iterations of the repeated metaclustering algorithm. 
 
+-------------------------------------------------------------------------------------------------------------------------------
+
 We also have examples (Tasks 4-6) for reproducting results in our paper.
 
 4) **Task 4: Classification in all 3 datasets (Fig 2D)**: Feature Use VoPo features for classification tasks in each of the 3 datasets. Also reproduce the results in Figure 2D. Generating distributions of classification accuracies from single vs. repeated metaclustering solutions (Figure 2D.). 
