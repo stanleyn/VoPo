@@ -9,21 +9,21 @@
 
 ## Purpose
 
-We introduce VoPo which enables end-to-end bioinformatics analysis of single-cell data. Here we provide code for general usage and to reproduce the results in our paper `VoPo Leverages Cellular Heterogeneity for Predictive Modeling of Single-Cell Data`. The (4) tasks outlined in this readme enable the following:
+We introduce VoPo which enables end-to-end bioinformatics analysis of single-cell data. Here we provide code for general usage and to reproduce the results in our paper `VoPo Leverages Cellular Heterogeneity for Predictive Modeling of Single-Cell Data`. *You can focus on tasks 1-3 for instructons on general usage: clusterng, feature extraction, and visualization*. The (6) tasks outlined in this readme enable the following:
 
 1) **Task 1: Clustering and Feature Engineering**: Run VoPo clustering on some FCS files and extract features (either frequency or functional)
 
 2) **Task 2: Example of how to use engineered features for a classification task**: After extracting VoPo features, we show you how to apply feature selection and run the classification task
 
-3) **Task 3: Classification in all 3 datasets (Fig 2D)**: Feature Use VoPo features for classification tasks in each of the 3 datasets. Also reproduce the results in Figure 2D. Generating distributions of classification accuracies from single vs. repeated metaclustering solutions (Figure 2D.). 
+3) **Task 3: Differentiation Score Visualization Examples**: Generate comprehensive single-cell visualizations for each of the 3 datasets (Figure 2A-C). Uses processed data from running 50 iterations of the repeated metaclustering algorithm. 
 
-4) **Task 4: Differentiation Score Visualization (Figs 2a-c)**: Generate comprehensive single-cell visualizations for each of the 3 datasets (Figure 2A-C). Uses processed data from running 50 iterations of the repeated metaclustering algorithm. 
+4) **Task 4: Classification in all 3 datasets (Fig 2D)**: Feature Use VoPo features for classification tasks in each of the 3 datasets. Also reproduce the results in Figure 2D. Generating distributions of classification accuracies from single vs. repeated metaclustering solutions (Figure 2D.). 
 
 Alternatively, in (5) we have provided an example for re-running all clustering results from scratch. However this will require downloading FCS files from flow repository and modifying the paths in the scripts to the data, accordingly.  
 
 5) **Task 5: Re-run repeated metaclustering from scratch on the 3 datasets**: Re-running the repeated metaclustering strategy from scratch along with classification and visualization. Note that this task requires downloading FCS files from each dataset. 
 
-6) **Task 6: Visualize differentiation score on single cells based on frequency or function-based features**: Examples on how to create single-cell visualizations with points colored by differentiation score (Fig 2 a-c) for frequency features and for function features. 
+6) **Task 6: Visualize differentiation score on single cells based on frequency or function-based features**: Examples on how to create single-cell visualizations with points colored by differentiation score (Fig 2 a-c) for frequency features and for function features. We also have an option for 'directional differences' (e.g. to visualization which phenotypic class a particular cell-type is higher in)
 
 ## Dependencies
 
@@ -117,7 +117,37 @@ We will generate a distribution of classification accuracies, repeating the cros
 ```R
 ClAcc=runClassif(FuncDF=FreqDF,Y=Meta_Surgery$Class,FPV=40,IterNumClus=Build_Surgery$IterNumClus,propTrain=0.7,numPerm=50,sampID=as.character(Meta_Surgery$Subject),numCore=10)
 ```
-## Task 3: Classification Accuracies in all 3 Datasets (Reproduce Fig 2D.)
+
+## Task 3: Comprehensive Single-Cell Visualizations for each Dataset (Fig 2A-C.)
+
+* You can look at any of these 3 examples to see how to use a VoPo clustering result for the comprehensive immune atlas visualization
+* Results for each dataset will be within their respective folder in OutDir. 
+* There is a plot for each surface marker showing its expression across cells (ex. CD3.jpg shows CD3 expression)
+* pval.jpg plot colors the cells by their differentiation scores computed by the algorithm. 
+
+### Hip Surgery Recovery Dataset (HSR)
+
+```R
+source('PaperFigures/Visualization/SurgeryViz.R')
+```
+You can now find plots for all markers and differentiation scores in OutDir/Surgery_Viz
+
+### Normal Term Pregnancy Dataset (NTP)
+
+```R
+source('PaperFigures/Visualization/PregnancyViz.R')
+```
+You can now find plots for all markers and differentiation scores in OutDir/Pregnancy_Viz
+
+### Longitudinal Stroke Recovery Dataset (LSR)
+
+```R
+source('PaperFigures/Visualization/StrokeViz.R')
+```
+
+You can now find plots for all markers and differentiation scores in OutDir/Stroke_Viz
+
+## Task 4: Classification Accuracies in all 3 Datasets (Reproduce Fig 2D.)
 
 * For each dataset, we will show you how to generate a distribution of classification accuracies from the VoPo engineered features. For each dataset, the first example referring to the script in the `Examples` directory shows how you can build a model based on the extracted features.
 * We will also generate the boxplots (baseline to VoPo distribution comparison in figure 2D and figures with appear in the 'OutDir' directory.
@@ -172,33 +202,7 @@ source('PaperFigures/Classification/Class_Stroke.R')
 ```
 You can now find your boxplots in OutDir as Stroke_Dist.pdf
 
-## Task 4: Comprehensive Single-Cell Visualizations for each Dataset (Fig 2A-C.)
 
-* Results for each dataset will be within their respective folder in OutDir. 
-* There is a plot for each surface marker showing its expression across cells (ex. CD3.jpg shows CD3 expression)
-* pval.jpg plot colors the cells by their differentiation scores computed by the algorithm. 
-
-### Hip Surgery Recovery Dataset (HSR)
-
-```R
-source('PaperFigures/Visualization/SurgeryViz.R')
-```
-You can now find plots for all markers and differentiation scores in OutDir/Surgery_Viz
-
-### Normal Term Pregnancy Dataset (NTP)
-
-```R
-source('PaperFigures/Visualization/PregnancyViz.R')
-```
-You can now find plots for all markers and differentiation scores in OutDir/Pregnancy_Viz
-
-### Longitudinal Stroke Recovery Dataset (LSR)
-
-```R
-source('PaperFigures/Visualization/StrokeViz.R')
-```
-
-You can now find plots for all markers and differentiation scores in OutDir/Stroke_Viz
 
 ## Task 5: Re-run clustering from scratch. Use that clustering result to generate classification results and visualizations (Fig 2D.)
 
