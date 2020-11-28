@@ -9,13 +9,15 @@
 
 ## Purpose
 
-We introduce VoPo which enables end-to-end bioinformatics analysis of single-cell data. Here we provide code for general usage and to reproduce the results in our paper `VoPo Leverages Cellular Heterogeneity for Predictive Modeling of Single-Cell Data`. **You can focus on tasks 1-3 for instructons on general usage: clusterng, feature extraction, and visualization**. The (6) tasks outlined in this readme enable the following:
+We introduce VoPo which enables end-to-end bioinformatics analysis of single-cell data. Here we provide code for general usage and to reproduce the results in our paper `VoPo Leverages Cellular Heterogeneity for Predictive Modeling of Single-Cell Data`. **You can focus on tasks 1-3 for instructons on general usage: clusterng, feature extraction, and visualization**. Tasks 1-3 outlined in this readme enable the following:
 
 1) **Task 1: Clustering and Feature Engineering**: Run VoPo clustering on some FCS files and extract features (either frequency or functional)
 
 2) **Task 2: Example of how to use engineered features for a classification task**: After extracting VoPo features, we show you how to apply feature selection and run the classification task
 
 3) **Task 3: Differentiation Score Visualization Examples**: Generate comprehensive single-cell visualizations for each of the 3 datasets (Figure 2A-C). Uses processed data from running 50 iterations of the repeated metaclustering algorithm. 
+
+We also have examples (Tasks 4-6) for reproducting results in our paper.
 
 4) **Task 4: Classification in all 3 datasets (Fig 2D)**: Feature Use VoPo features for classification tasks in each of the 3 datasets. Also reproduce the results in Figure 2D. Generating distributions of classification accuracies from single vs. repeated metaclustering solutions (Figure 2D.). 
 
