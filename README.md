@@ -9,7 +9,7 @@
 
 ## Purpose
 
-We introduce VoPo which enables end-to-end bioinformatics analysis of single-cell data. Here we provide code for general usage and to reproduce the results in our paper `VoPo Leverages Cellular Heterogeneity for Predictive Modeling of Single-Cell Data`. *You can focus on tasks 1-3 for instructons on general usage: clusterng, feature extraction, and visualization*. The (6) tasks outlined in this readme enable the following:
+We introduce VoPo which enables end-to-end bioinformatics analysis of single-cell data. Here we provide code for general usage and to reproduce the results in our paper `VoPo Leverages Cellular Heterogeneity for Predictive Modeling of Single-Cell Data`. **You can focus on tasks 1-3 for instructons on general usage: clusterng, feature extraction, and visualization**. The (6) tasks outlined in this readme enable the following:
 
 1) **Task 1: Clustering and Feature Engineering**: Run VoPo clustering on some FCS files and extract features (either frequency or functional)
 
@@ -31,7 +31,9 @@ Dependencies: We use a number of R packages. Please make sure that you have thes
 
 ## Installation Instructions
 
-* We assume that you have R installed. :) We used R version 3.4.4 to produce the results in this paper. R and the above packages are the only things that you need to install and we expect this to take minuts on a standard desktop computer.
+* FCS files in this tutorial are stored with `git-lfs`. Please make sure you have this installed (https://git-lfs.github.com/). 
+
+* We used R version 3.4.4 to produce the results in this paper. R and the above packages are the only things that you need to install and we expect this to take minutes on a standard desktop computer.
 
 * You can clone this git repository by 
 
