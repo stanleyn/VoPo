@@ -216,7 +216,7 @@ You can now find plots for all markers and differentiation scores in OutDir/Stro
 
 ## Task 4: Vizualize Differences Between Clinical Outcome Classes Based on Frequency or Function 
 
-* Here we will show examples of how to color by differentation score for Frequency Based Features and Functional Features.
+* Here we will show examples of how to color by differentation score for Frequency Based Features and Functional Features. **Note that in the paper we showed only examples for frequency-based features, but here we provide an example for function as well!**
 * I will tell you the functions to use here. **More Specific Examples are coming soon!** Inputs are similar to what you have seen above.
 * A differentiation score plot based on frequency will ultimately create a single plot.
 * Using functional marker features, we will get one differentiation score plot for each functional marker.
