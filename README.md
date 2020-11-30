@@ -9,7 +9,7 @@
 
 ## Purpose
 
-We introduce VoPo which enables end-to-end bioinformatics analysis of single-cell data. Here we provide code for general usage and to reproduce the results in our paper `VoPo Leverages Cellular Heterogeneity for Predictive Modeling of Single-Cell Data`. **You can focus on tasks 1-3 for instructons on general usage: clusterng, feature extraction, and visualization**. Tasks 1-3 outlined in this readme enable the following:
+We introduce VoPo which enables end-to-end bioinformatics analysis of single-cell data. Here we provide code for general usage and to reproduce the results in our paper `VoPo Leverages Cellular Heterogeneity for Predictive Modeling of Single-Cell Data`. **You can focus on tasks 1-4 for instructons on general usage: clusterng, feature extraction, and visualization**. Tasks 1-4 outlined in this readme enable the following:
 
 1) **Task 1: Clustering and Feature Engineering**: Run VoPo clustering on some FCS files and extract features (either frequency or functional)
 
@@ -17,17 +17,17 @@ We introduce VoPo which enables end-to-end bioinformatics analysis of single-cel
 
 3) **Task 3: Differentiation Score Visualization Examples**: Generate comprehensive single-cell visualizations of frequency differences. We will show a generic example and one specific for each of the 3 datasets (Figure 2A-C). Uses processed data from running 50 iterations of the repeated metaclustering algorithm. 
 
+4) **Task 4: Visualize differentiation score on single cells based on frequency or function-based features**: Examples on how to create single-cell visualizations with points colored by differentiation score (Fig 2 a-c) for frequency features and for function features. We also have an option for 'directional differences' (e.g. to visualization which phenotypic class a particular cell-type is higher in)
+
 -------------------------------------------------------------------------------------------------------------------------------
 
-We also have examples (Tasks 4-6) for reproducting results in our paper.
+We also have examples (Tasks 5-6) for reproducting results in our paper.
 
-4) **Task 4: Classification in all 3 datasets (Fig 2D)**: Feature Use VoPo features for classification tasks in each of the 3 datasets. Also reproduce the results in Figure 2D. Generating distributions of classification accuracies from single vs. repeated metaclustering solutions (Figure 2D.). 
+5) **Task 5: Classification in all 3 datasets (Fig 2D)**: Feature Use VoPo features for classification tasks in each of the 3 datasets. Also reproduce the results in Figure 2D. Generating distributions of classification accuracies from single vs. repeated metaclustering solutions (Figure 2D.). 
 
-Alternatively, in (5) we have provided an example for re-running all clustering results from scratch. However this will require downloading FCS files from flow repository and modifying the paths in the scripts to the data, accordingly.  
+Alternatively, in (6) we have provided an example for re-running all clustering results from scratch. However this will require downloading FCS files from flow repository and modifying the paths in the scripts to the data, accordingly.  
 
-5) **Task 5: Re-run repeated metaclustering from scratch on the 3 datasets**: Re-running the repeated metaclustering strategy from scratch along with classification and visualization. Note that this task requires downloading FCS files from each dataset. 
-
-6) **Task 6: Visualize differentiation score on single cells based on frequency or function-based features**: Examples on how to create single-cell visualizations with points colored by differentiation score (Fig 2 a-c) for frequency features and for function features. We also have an option for 'directional differences' (e.g. to visualization which phenotypic class a particular cell-type is higher in)
+6) **Task 6: Re-run repeated metaclustering from scratch on the 3 datasets**: Re-running the repeated metaclustering strategy from scratch along with classification and visualization. Note that this task requires downloading FCS files from each dataset. 
 
 ## Dependencies
 
@@ -85,6 +85,11 @@ source('VoPo_main/getFunctionalFeature')
 FInds=readRDS('Processed/FI_HSR.rds')
 FunctionalFeatures=getFunctionalFeature(Build,FNames,FInds)
 ```
+
+**Note that you can use `FrequencyFeatures` or `FunctionalFeatures` either independently or concatenated with your favorite classifier.**
+
+In task (2), we have an example with random forest, but you can feel free to use whatever you want with these features. We find that VoPo features + some regularized regression approach like Lasso or Elastic Net works very well for continuous outcomes.
+
 
 ## Task 2: Using Engineered Features for Classification.
 
@@ -178,7 +183,7 @@ You can also use the following function to plot all of the cells in `CellMat` by
 source('VoPo_main/vizAtlas_Phenotype')
 ```
 
-Now, we show examples from the 3 datasets in the paper. 
+**Now, we show examples from the 3 datasets in the paper.** 
 
 * You can look at any of these 3 examples to see how to use a VoPo clustering result for the comprehensive immune atlas visualization
 * Results for each dataset will be within their respective folder in OutDir. 
@@ -209,7 +214,57 @@ source('PaperFigures/Visualization/StrokeViz.R')
 
 You can now find plots for all markers and differentiation scores in OutDir/Stroke_Viz
 
-## Task 4: Classification Accuracies in all 3 Datasets (Reproduce Fig 2D.)
+## Task 4: Vizualize Differences Between Clinical Outcome Classes Based on Frequency or Function 
+
+* Here we will show examples of how to color by differentation score for Frequency Based Features and Functional Features.
+* I will tell you the functions to use here. **More Specific Examples are coming soon!** Inputs are similar to what you have seen above.
+* A differentiation score plot based on frequency will ultimately create a single plot.
+* Using functional marker features, we will get one differentiation score plot for each functional marker.
+
+Instructions for making differentiation score plots for both frequency and function
+
+* Step 1: Select a large subset of cells across all of your FCS files. Use function, 
+
+```R
+source('VoPo_main/SampleCells.R') 
+```
+
+* Step 2: Color the sampled cells by phenotypic marker expression
+
+```R
+source('VoPo_main/vizAtlas_Phenotype')
+```
+* Step 3: Make a frequency map. Each cell will be colored by differentiation score according to frequency. Use the function,
+
+```R
+source('VoPo_main/vizAtlas_Freq.R')
+```
+
+* Step 4: Make functional maps. For each functional marker in your panel, each cell will be colored according to differentiation score based on the expression of that particular functional marker. Note that as one of the functional arguments you will specify the directory to write these plots to. They will all go to one place. Use the function,
+
+```R
+source('VoPo_main/vizAtlas_Function.R')
+```
+
+We also have functions for making directrional plots, which will indicate which class has higher frequency or function. By default, it will use the minimum value of the response vector (e.g. sample classifications) to be colored blue and the maximum value of the response vector (e.g. sample classifications) to be colored blue. So, if a point is colored red, it means it likely belongs to a cell-population where the functional marker expression/frequency was likely increased.
+
+To make a frequency single-cell map with colors indicating direction:
+
+```R
+source('VoPo_main/vizAtlas_Freq_Directional.R')
+```
+
+To make a frequency single-cell map with colors indicating direction:
+
+```R
+source('VoPo_main/vizAtlas_Function_Directional.R')
+```
+
+This completes instructions for tasks 1-4 for general usage purposes.
+
+__________________________________________________________________________-
+
+## Task 5: Classification Accuracies in all 3 Datasets (Reproduce Fig 2D.)
 
 * For each dataset, we will show you how to generate a distribution of classification accuracies from the VoPo engineered features. For each dataset, the first example referring to the script in the `Examples` directory shows how you can build a model based on the extracted features.
 * We will also generate the boxplots (baseline to VoPo distribution comparison in figure 2D and figures with appear in the 'OutDir' directory.
@@ -264,7 +319,7 @@ source('PaperFigures/Classification/Class_Stroke.R')
 ```
 You can now find your boxplots in OutDir as Stroke_Dist.pdf
 
-## Task 5: Re-run clustering from scratch. Use that clustering result to generate classification results and visualizations (Fig 2D.)
+## Task 6: Re-run clustering from scratch. Use that clustering result to generate classification results and visualizations (Fig 2D.)
 
 * You can run this part of the code if you have access to the raw FCS files. You will need to go in and change the path to the FCS files depending on where you download them. The place where you need to change the path is clearly marked :)
 
@@ -327,49 +382,5 @@ You can find the visualization results in OutDir/Stroke_Viz
 
 You can find the AUCs from 30 runs of the cross validation pipeline stores in the vector `AUCs`
 
-## Task 6: Create single-cell visualization with each cell computed by differentiation score. 
 
-* Here we will show examples of how to color by differentation score for Frequency Based Features and Functional Features.
-* I will tell you the functions to use here. **Examples coming soon!** Inputs are similar to what you have seen above.
-* A differentiation score plot based on frequency will ultimately create a single plot.
-* Using functional marker features, we will get one differentiation score plot for each functional marker.
-
-Instructions for making differentiation score plots for both frequency and function
-
-* Step 1: Select a large subset of cells across all of your FCS files. Use function, 
-
-```R
-source('VoPo_main/SampleCells.R') 
-```
-
-* Step 2: Color the sampled cells by phenotypic marker expression
-
-```R
-source('VoPo_main/vizAtlas_Phenotype')
-```
-* Step 3: Make a frequency map. Each cell will be colored by differentiation score according to frequency. Use the function,
-
-```R
-source('VoPo_main/vizAtlas_Freq.R')
-```
-
-* Step 4: Make functional maps. For each functional marker in your panel, each cell will be colored according to differentiation score based on the expression of that particular functional marker. Note that as one of the functional arguments you will specify the directory to write these plots to. They will all go to one place. Use the function,
-
-```R
-source('VoPo_main/vizAtlas_Function.R')
-```
-
-We also have functions for making directrional plots, which will indicate which class has higher frequency or function. By default, it will use the minimum value of the response vector (e.g. sample classifications) to be colored blue and the maximum value of the response vector (e.g. sample classifications) to be colored blue. So, if a point is colored red, it means it likely belongs to a cell-population where the functional marker expression/frequency was likely increased.
-
-To make a frequency single-cell map with colors indicating direction:
-
-```R
-source('VoPo_main/vizAtlas_Freq_Directional.R')
-```
-
-To make a frequency single-cell map with colors indicating direction:
-
-```R
-source('VoPo_main/vizAtlas_Function_Directional.R')
-```
 
