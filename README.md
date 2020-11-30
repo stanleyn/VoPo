@@ -15,7 +15,7 @@ We introduce VoPo which enables end-to-end bioinformatics analysis of single-cel
 
 2) **Task 2: Example of how to use engineered features for a classification task**: After extracting VoPo features, we show you how to apply feature selection and run the classification task
 
-3) **Task 3: Differentiation Score Visualization Examples**: Generate comprehensive single-cell visualizations for each of the 3 datasets (Figure 2A-C). Uses processed data from running 50 iterations of the repeated metaclustering algorithm. 
+3) **Task 3: Differentiation Score Visualization Examples**: Generate comprehensive single-cell visualizations of frequency differences. We will show a generic example and one specific for each of the 3 datasets (Figure 2A-C). Uses processed data from running 50 iterations of the repeated metaclustering algorithm. 
 
 -------------------------------------------------------------------------------------------------------------------------------
 
@@ -126,17 +126,64 @@ ClAcc=runClassif(FuncDF=FreqDF,Y=Meta_Surgery$Class,FPV=40,IterNumClus=Build_Sur
 
 ## Task 3: Comprehensive Single-Cell Visualizations for each Dataset (Fig 2A-C.)
 
+## General Usage
+
+As described in the paper, the general idea is to sample a subset of cells across all sample FCS files, project them in 2D (for visualization purposes), and to map the differentiation scores onto them. 
+
+We will show you the sequence of steps to use to apply this to your VoPo clustering result. In this example, we use tSNE for visualization, but you are free to construct your layout of cells however you want:
+
+```R
+#step 1: Sample cells across all FCS files
+
+source('VoPo_main/SampleCells.R')
+
+#Your inputs are 
+	#FileNames: The vector of filenames that you used for runRepMetaclust.R
+	#MN: the full vector of marker names (see Task 1)
+	#ToUse: the indices of the markers that you used for clustering
+	#NumCells: the number of cells to sample per file. We find 1000 works well.
+	#NumCellsFinal: the number of cells to retain total (sampled randomly). We find 3000 works well
+
+CellMat=SampleCells(FileNames,MN,ToUse,NumCells=1000,NumCellsFinal=30000)
+```
+
+Now, project cells obtained from the output of `SampleCells` using your favorite dimensionality reduction algorithm.
+
+```R
+library('Rtsne')
+tRes=Rtsne(CellMat)$Y
+```
+
+You are now ready to compute the per-cell differentiation score and to make visualizations
+
+```R
+source('VoPo_main/vizAtlas.R')
+
+#Your inputs are
+	#CellMat obtained above
+	#Build is the VoPo clustering result obtained in Task (1)
+	#Y is the vector of sample classes corresponding to the input files to VoPo clustering in task 1
+	#ToUse is the indices of markers you used for clustering. These should be the same as your input to `SampleCells.R`
+	#numCore is the number of cores to use
+	#layout is the layout you computed on `CellMat` 
+	#ourdir: the directory (`saveDir`) you will save the plot to. 
+
+Atlas=vizAtlas(CellMat,Build,Y=myLabels,ToUse_Stroke,SampsToUse=NULL,numCore=35,layout=tRes,outdir=saveDir)
+```
+The above showed the sequence of steps you would need to compute a frequency-based differentiation score.
+
+You can also use the following function to plot all of the cells in `CellMat` by the expression of each marker for annotation.
+
+```R
+source('VoPo_main/vizAtlas_Phenotype')
+```
+
+Now, we show examples from the 3 datasets in the paper. 
+
 * You can look at any of these 3 examples to see how to use a VoPo clustering result for the comprehensive immune atlas visualization
 * Results for each dataset will be within their respective folder in OutDir. 
 * There is a plot for each surface marker showing its expression across cells (ex. CD3.jpg shows CD3 expression)
 * pval.jpg plot colors the cells by their differentiation scores computed by the algorithm. 
-
-### Hip Surgery Recovery Dataset (HSR)
-
-```R
-source('PaperFigures/Visualization/SurgeryViz.R')
-```
-You can now find plots for all markers and differentiation scores in OutDir/Surgery_Viz
 
 ### Normal Term Pregnancy Dataset (NTP)
 
@@ -144,6 +191,15 @@ You can now find plots for all markers and differentiation scores in OutDir/Surg
 source('PaperFigures/Visualization/PregnancyViz.R')
 ```
 You can now find plots for all markers and differentiation scores in OutDir/Pregnancy_Viz
+
+### Hip Surgery Recovery Dataset (HSR)
+
+Note in this example, we show how you can do visualization for a subset of samples by changing `SampsToUse=NULL`
+
+```R
+source('PaperFigures/Visualization/SurgeryViz.R')
+```
+You can now find plots for all markers and differentiation scores in OutDir/Surgery_Viz
 
 ### Longitudinal Stroke Recovery Dataset (LSR)
 
@@ -207,8 +263,6 @@ We can also generate boxplots for the HSR dataset from Figure 2D
 source('PaperFigures/Classification/Class_Stroke.R')
 ```
 You can now find your boxplots in OutDir as Stroke_Dist.pdf
-
-
 
 ## Task 5: Re-run clustering from scratch. Use that clustering result to generate classification results and visualizations (Fig 2D.)
 
