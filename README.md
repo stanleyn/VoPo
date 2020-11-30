@@ -232,7 +232,7 @@ source('VoPo_main/SampleCells.R')
 * Step 2: Color the sampled cells by phenotypic marker expression
 
 ```R
-source('VoPo_main/vizAtlas_Phenotype')
+source('VoPo_main/vizAtlas_Phenotype.R')
 ```
 * Step 3: Make a frequency map. Each cell will be colored by differentiation score according to frequency. Use the function,
 
