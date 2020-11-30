@@ -15,7 +15,7 @@ We introduce VoPo which enables end-to-end bioinformatics analysis of single-cel
 
 2) **Task 2: Example of how to use engineered features for a classification task**: After extracting VoPo features, we show you how to apply feature selection and run the classification task
 
-3) **Task 3: Differentiation Score Visualization Examples**: Generate comprehensive single-cell visualizations of frequency differences. We will show a generic example and one specific for each of the 3 datasets (Figure 2A-C). Uses processed data from running 50 iterations of the repeated metaclustering algorithm. 
+3) **Task 3: Differentiation Score Visualization Examples**: Generate comprehensive single-cell visualizations of frequency differences. We will show a generic example for general usage and examples for each of the 3 datasets in the paper (Figure 2A-C).  
 
 4) **Task 4: Visualize differentiation score on single cells based on frequency or function-based features**: Examples on how to create single-cell visualizations with points colored by differentiation score (Fig 2 a-c) for frequency features and for function features. We also have an option for 'directional differences' (e.g. to visualization which phenotypic class a particular cell-type is higher in)
 
