@@ -6,6 +6,7 @@
 * Date Updated: June 15, 2020
 * Prepared By: Natalie Stanley (stanleyn@stanford.edu)
 * Code Tested in: R version 3.4.4 
+* **Important Note: make sure you have git lfs installed! Some of the data to run the tutorials are stored in git lfs** (https://git-lfs.github.com/)
 
 ## Purpose
 
