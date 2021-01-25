@@ -45,7 +45,7 @@ Meta_Surgery=readRDS('Processed/Meta_Surgery.rds')
 	#numCPF: The number of clusters per FCS file
 	#MN: The vector of marker names that correspond to known antibody names that we either loaded or defind above
 	#ToUse: The vector of indices corresponding to the columns we want to use for clustering
-	#5: We are running this with 5 cores.
+	#5: We are running this with 5 cores. You can obviously use more to make it faster....
 
 Build=runRepMetaclust(50,50,FileNames,doCPF='specify',numCPF=1000,MN,ToUse,5)
 print('clustering done!')
