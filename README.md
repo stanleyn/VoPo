@@ -160,6 +160,15 @@ library('Rtsne')
 tRes=Rtsne(CellMat)$Y
 ```
 
+## Color By The Expression of Each Phenotypic Marker
+
+You can also use the following function to plot all of the cells in `CellMat` by the expression of each phenotypic marker for annotation.
+
+```R
+source('VoPo_main/vizAtlas_Phenotype')
+```
+
+## Coloring Cells by Differentiation Score
 You are now ready to compute the per-cell differentiation score and to make visualizations
 
 ```R
@@ -177,12 +186,6 @@ source('VoPo_main/vizAtlas.R')
 Atlas=vizAtlas(CellMat,Build,Y=myLabels,ToUse_Stroke,SampsToUse=NULL,numCore=35,layout=tRes,outdir=saveDir)
 ```
 The above showed the sequence of steps you would need to compute a frequency-based differentiation score.
-
-You can also use the following function to plot all of the cells in `CellMat` by the expression of each marker for annotation.
-
-```R
-source('VoPo_main/vizAtlas_Phenotype')
-```
 
 **Now, we show examples from the 3 datasets in the paper.** 
 
