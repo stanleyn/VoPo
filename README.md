@@ -20,16 +20,6 @@ We introduce VoPo which enables end-to-end bioinformatics analysis of single-cel
 
 4) **More Flexible: Visualize Cells According to a Differentiation Score Reflecting Functional Differences [Task 4]**: Examples on how to create single-cell visualizations with points colored by differentiation score (Fig 2 a-c) for frequency features and for function features. We also have an option for 'directional differences' (e.g. to visualization which class a particular cell-type is higher in)
 
--------------------------------------------------------------------------------------------------------------------------------
-
-We also have examples (Tasks 5-6) for reproducting results in our paper.
-
-5) **Task 5: Classification in all 3 datasets (Fig 2D)**: Feature Use VoPo features for classification tasks in each of the 3 datasets. Also reproduce the results in Figure 2D. Generating distributions of classification accuracies from single vs. repeated metaclustering solutions (Figure 2D.). 
-
-Alternatively, in (6) we have provided an example for re-running all clustering results from scratch. However this will require downloading FCS files from flow repository and modifying the paths in the scripts to the data, accordingly.  
-
-6) **Task 6: Re-run repeated metaclustering from scratch on the 3 datasets**: Re-running the repeated metaclustering strategy from scratch along with classification and visualization. Note that this task requires downloading FCS files from each dataset. 
-
 ## Dependencies
 
 Dependencies: We use a number of R packages. Please make sure that you have these packages installed. `flowCore`, `FNN`, `foreach`, `doParallel`, `iterators`, `plyr`, `randomForest`, `matrixStats`,`ROCR`,`FastKNN`, `miscTools`, `ggplot2`, `reshape2`, `viridis`, `pROC`, `igraph`.
@@ -279,7 +269,17 @@ source('VoPo_main/vizAtlas_Function_Directional.R')
 
 This completes instructions for tasks 1-4 for general usage purposes.
 
-__________________________________________________________________________-
+__________________________________________________________________________
+
+We also have examples (Tasks 5-6) for reproducting results in our paper.
+
+5) **Task 5: Classification in all 3 datasets (Fig 2D)**: Feature Use VoPo features for classification tasks in each of the 3 datasets. Also reproduce the results in Figure 2D. Generating distributions of classification accuracies from single vs. repeated metaclustering solutions (Figure 2D.). 
+
+Alternatively, in (6) we have provided an example for re-running all clustering results from scratch. However this will require downloading FCS files from flow repository and modifying the paths in the scripts to the data, accordingly.  
+
+6) **Task 6: Re-run repeated metaclustering from scratch on the 3 datasets**: Re-running the repeated metaclustering strategy from scratch along with classification and visualization. Note that this task requires downloading FCS files from each dataset. 
+
+-------------------------------------------------------------------------------------------------------------------------------
 
 ## Task 5: Classification Accuracies in all 3 Datasets (Reproduce Fig 2D.)
 
