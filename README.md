@@ -12,13 +12,13 @@
 
 We introduce VoPo which enables end-to-end bioinformatics analysis of single-cell data. Here we provide code for general usage and to reproduce the results in our paper `VoPo Leverages Cellular Heterogeneity for Predictive Modeling of Single-Cell Data`. **You can focus on tasks 1-4 for instructons on general usage: clustering, feature extraction, and visualization**. Tasks 1-4 outlined in this readme enable the following:
 
-1) **Task 1: Clustering and Feature Engineering**: Run VoPo clustering on some FCS files and extract features (either frequency or functional)
+1) **Task 1: Metaclustering and Feature Engineering**: Run VoPo clustering on some FCS files and extract features (either frequency or functional)
 
-2) **Task 2: Example of how to use engineered features for a classification task**: After extracting VoPo features, we show you how to apply feature selection and run the classification task
+2) **Task 2: Using Engineered Features for Classification**: After extracting VoPo features, we show you how to apply feature selection and run the classification task
 
-3) **Task 3: Differentiation Score Visualization Examples**: Generate comprehensive single-cell visualizations of frequency differences. We will show a generic example for general usage and examples for each of the 3 datasets in the paper (Figure 2A-C).  
+3) **Task 3: Differentiation Score Visualization + Coloring by Phenotypic Marker Expression**: Generate comprehensive single-cell visualizations of frequency differences. We will show a generic example for general usage and examples for each of the 3 datasets in the paper (Figure 2A-C).  
 
-4) **Task 4: Visualize differentiation score on single cells based on frequency or function-based features**: Examples on how to create single-cell visualizations with points colored by differentiation score (Fig 2 a-c) for frequency features and for function features. We also have an option for 'directional differences' (e.g. to visualization which phenotypic class a particular cell-type is higher in)
+4) **Task 4: Visualize differentiation score on single cells based on frequency or function-based features**: Examples on how to create single-cell visualizations with points colored by differentiation score (Fig 2 a-c) for frequency features and for function features. We also have an option for 'directional differences' (e.g. to visualization which class a particular cell-type is higher in)
 
 -------------------------------------------------------------------------------------------------------------------------------
 
