@@ -18,7 +18,7 @@ We introduce VoPo which enables end-to-end bioinformatics analysis of single-cel
 
 3) **Differentiation Score Visualization + Coloring by Phenotypic Marker Expression [Task 3]**: Generate comprehensive single-cell visualizations of frequency differences. We will show a generic example for general usage and examples for each of the 3 datasets in the paper (Figure 2A-C).  
 
-4) **More Flexible: Visualize Cells According to a Differentiation Score Reflecting Functional Differences [Task 4]**: Examples on how to create single-cell visualizations with points colored by differentiation score (Fig 2 a-c) for frequency features and for function features. We also have an option for 'directional differences' (e.g. to visualization which class a particular cell-type is higher in)
+4) **More Flexible: Visualize Cells According to a Differentiation Score Reflecting Functional Differences [Task 4]**: Examples on how to create single-cell visualizations with points colored by differentiation score (Fig 2 a-c) for frequency features and for functional features. We also have an option for 'directional differences' (e.g. to visualization which class a particular cell-type is higher in)
 
 ## Dependencies
 
