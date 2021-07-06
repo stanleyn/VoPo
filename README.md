@@ -63,14 +63,14 @@ Given FCS files, the first step is to create the metaclustering result. In this 
 #inputs in the order that they appear
 	#S: The number of metaclustering iterations
 	#K: The number of metaclusters per iteration
-	#FileNames: The vector of filenames (with the whole path specified)
+	#FileNames: The vector of filenames (with the whole path specified) e.g. FNames=c(~/FCS_1.fcs,~/FCS_1.fcs......)
 	#doCPF='specify' means that we are going to specify the # of clusters per file
 	#numCPF: The number of clusters per FCS file
 	#MN: The vector of marker names that correspond to the columsn of the FCS files eg markerNames=c('CD45RA','CD3'.....)
 	#ToUse: The vector of indices corresponding to the columns we want to use for clustering. For example, if you are clustering based only on phenotypic 		markers and they occur at indices 1, 3, and 5, we could define TU=c(1,3,5)
 	#numCore: The number of cores to use for parallelization
 
-Build=runRepMetaclust(S=50,K=50,FileNames,doCPF='specify',numCPF=1000,MN=markerNames,ToUse=TU,numCore=5)
+Build=runRepMetaclust(S=50,K=50,FileNames=FNames,doCPF='specify',numCPF=1000,MN=markerNames,ToUse=TU,numCore=5)
 ```
 Alternatively, please see a Demo Example (`Demo_VoPo.R`) for a collection of FCS files that will help to clarify the format of inputs
 
@@ -80,7 +80,7 @@ source('Demo_Data/Demo_VoPo.R')
 
 ### Extracting Frequency Features
 
-* If you want to extract frequency-related features from VoPo clustering object, `Build`, and the vector of file names you gave to VoPo `FNames` in the above `Demo_VoPo.R` script, you can do this with the following:
+* If you want to extract frequency-related features from VoPo clustering object, `Build`, and the vector of filenames (called `FNames`) in the above `Demo_VoPo.R` script, you can do this with the following:
 
 ```R
 source('VoPo_main/getFrequencyFeature.R')
@@ -91,7 +91,7 @@ This is the data matrix you can use for classification tasks (like we did in the
 
 ### Extracting Functional Features
 
-* You can also extract function based features. You will input `Build` (the VoPo clustering object), `FNames`, which are the filenames in the order you gave them to VoPo (see Demo_VoPo script) and `FInds`, which are the indices of functional markers in your FCS files
+* You can also extract functional features. You will input `Build` (the VoPo clustering object), `FNames`, which are the filenames (in the same order) as given to runRepMetaclust. Here we show results where the functional marker indices are given by `FInds`.
 
 ```R
 source('VoPo_main/getFunctionalFeature')
@@ -145,7 +145,7 @@ ClAcc=runClassif(FuncDF=FreqDF,Y=Meta_Surgery$Class,FPV=40,IterNumClus=Build_Sur
 
 ## Task 3: Comprehensive Single-Cell Visualizations for each Dataset (Fig 2A-C.)
 
-## General Usage
+### General Usage
 
 As described in the paper, the general idea is to sample a subset of cells across all sample FCS files, project them in 2D (for visualization purposes), and to map the differentiation scores onto them. 
 
@@ -173,7 +173,7 @@ library('Rtsne')
 tRes=Rtsne(CellMat)$Y
 ```
 
-## Color By The Expression of Each Phenotypic Marker
+### Color By The Expression of Each Phenotypic Marker
 
 You can also use the following function to plot all of the cells in `CellMat` by the expression of each phenotypic marker for annotation.
 
@@ -181,7 +181,7 @@ You can also use the following function to plot all of the cells in `CellMat` by
 source('VoPo_main/vizAtlas_Phenotype')
 ```
 
-## Coloring Cells by Differentiation Score
+### Coloring Cells by Differentiation Score
 You are now ready to compute the per-cell differentiation score and to make visualizations
 
 ```R
@@ -235,7 +235,7 @@ You can now find plots for all markers and differentiation scores in OutDir/Stro
 
 * Here we will show examples of how to color by differentation score for Frequency Based Features and Functional Features. **Note that in the paper we showed only examples for frequency-based features, but here we provide an example for function as well!**
 * I will tell you the functions to use here. **More Specific Examples are coming soon!** Inputs are similar to what you have seen above.
-* A differentiation score plot based on frequency will ultimately create a single plot.
+* A differentiation score plot based on frequency will ultimately create a single plot, the same as that shown in Task 3.
 * Using functional marker features, we will get one differentiation score plot for each functional marker.
 
 Instructions for making differentiation score plots for both frequency and function
