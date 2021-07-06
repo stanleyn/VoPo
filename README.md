@@ -67,7 +67,23 @@ This software is licensed under Apache License, Version 2.0 (https://www.apache.
 source('Demo_Data/Demo_VoPo.R')
 ```
 
-* This script created a VoPo object called `Build` that can be used for further tasks.
+In particular, the clustering result `Build` can be generated as follows:
+
+```R
+#inputs in the order that they appear
+	#S: The number of metaclustering iterations
+	#K: The number of metaclusters per iteration
+	#FileNames: The vector of filenames (with the whole path specified)
+	#doCPF='specify' means that we are going to specify the # of clusters per file
+	#numCPF: The number of clusters per FCS file
+	#MN: The vector of marker names that correspond to known antibody names that we either loaded or defind above
+	#ToUse: The vector of indices corresponding to the columns we want to use for clustering
+	#5: We are running this with 5 cores. You can obviously use more to make it faster....
+
+Build=runRepMetaclust(S=50,K=50,FileNames,doCPF='specify',numCPF=1000,MN,ToUse,numCore=5)
+```
+
+Overall, a VoPo object called `Build` is created that can be used for further tasks.
 
 * If you want to extract frequency-related features from VoPo clustering object, `Build`, and the vector of file names you gave to VoPo `FNames` in the above `Demo_VoPo.R` script, you can do this with the following:
 
