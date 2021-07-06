@@ -57,17 +57,7 @@ This software is licensed under Apache License, Version 2.0 (https://www.apache.
 
 ## Task 1: Run VoPo Clustering and Extract Features
 
-* Here is a script for a quick demo for how to run VoPo clustering on FCS files. Once you have run this script, use the output to perform classification and visualization tasks (see Tasks 2-4). 
-
-* This demo should take less than 5 minutes to run on a standard computer. We used 5 cores in this example.
-
-* Please see `Demo_VoPo.R` script for a description of the inputs, etc.
-
-```R
-source('Demo_Data/Demo_VoPo.R')
-```
-
-In particular, the clustering result `Build` can be generated as follows:
+Given FCS files, the first step is to create the metaclustering result. In this example, we the VoPo clustering object is named `Build` and can be generated as follows:
 
 ```R
 #inputs in the order that they appear
@@ -76,14 +66,19 @@ In particular, the clustering result `Build` can be generated as follows:
 	#FileNames: The vector of filenames (with the whole path specified)
 	#doCPF='specify' means that we are going to specify the # of clusters per file
 	#numCPF: The number of clusters per FCS file
-	#MN: The vector of marker names that correspond to known antibody names that we either loaded or defind above
-	#ToUse: The vector of indices corresponding to the columns we want to use for clustering
-	#5: We are running this with 5 cores. You can obviously use more to make it faster....
+	#MN: The vector of marker names that correspond to the columsn of the FCS files eg markerNames=c('CD45RA','CD3'.....)
+	#ToUse: The vector of indices corresponding to the columns we want to use for clustering. For example, if you are clustering based only on phenotypic 		markers and they occur at indices 1, 3, and 5, we could define TU=c(1,3,5)
+	#numCore: The number of cores to use for parallelization
 
-Build=runRepMetaclust(S=50,K=50,FileNames,doCPF='specify',numCPF=1000,MN,ToUse,numCore=5)
+Build=runRepMetaclust(S=50,K=50,FileNames,doCPF='specify',numCPF=1000,MN=markerNames,ToUse=TU,numCore=5)
+```
+Alternatively, please see a Demo Example (`Demo_VoPo.R`) for a collection of FCS files that will help to clarify the format of inputs
+
+```R
+source('Demo_Data/Demo_VoPo.R')
 ```
 
-Overall, a VoPo object called `Build` is created that can be used for further tasks.
+### Extracting Frequency Features
 
 * If you want to extract frequency-related features from VoPo clustering object, `Build`, and the vector of file names you gave to VoPo `FNames` in the above `Demo_VoPo.R` script, you can do this with the following:
 
@@ -93,6 +88,8 @@ FrequencyFeatures=getFrequencyFeature(Build,FNames)
 ```
 
 This is the data matrix you can use for classification tasks (like we did in the paper). However, in the below example I show you how you can also get function-related features.
+
+### Extracting Functional Features
 
 * You can also extract function based features. You will input `Build` (the VoPo clustering object), `FNames`, which are the filenames in the order you gave them to VoPo (see Demo_VoPo script) and `FInds`, which are the indices of functional markers in your FCS files
 
