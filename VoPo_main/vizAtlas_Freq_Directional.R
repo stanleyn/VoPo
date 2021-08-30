@@ -14,7 +14,7 @@ vizAtlas_Freq_Directional=function(CellMat,Build,FreqMat,Y,ToUse,SampsToUse=NULL
 #inputs:
 #CellMat: The cell x marker matrix. A limited subsample of cells across files
 #Build is the data structure returned from repeated metaclustering (for script runRepMetaclustering.R
-#FuncMat: the matrix of functional features that you make
+#FreqMat: the matrix of frequency features you made using getFrequencyFeature.R
 #Y: is the response variable corresponnding to the order of FileNames given to runRepMetaclustering
 #ToUse: the indicies of the functional and phenotypic markers you what to use in your 2d layout
 #SampsToUse: The indices of samples to use. If you want to use all, keep default NULL       	
